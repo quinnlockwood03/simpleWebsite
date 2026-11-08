@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<!--
+    Page: Home – Paws & Polish
+    Author: Quinn Lockwood
+    Date: November 8, 2026
+-->
+    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet Paws & Polish, a fictional dog grooming business offering baths, haircuts, paw care, and a little extra pampering.">
+    <title>Home | Paws &amp; Polish</title>
+    <style>
+        /* Colors, typography, and cards match the Services and About pages. */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #fffaf5; color: #414141; }
+        header { background: #f4dfcf; padding: 22px 8%; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+        .logo { font-size: 26px; font-weight: bold; color: #815b46; text-decoration: none; }
+        nav { display: flex; flex-wrap: wrap; gap: 12px 25px; }
+        nav a { text-decoration: none; color: #614b3e; font-weight: bold; }
+        nav a:hover { color: #815b46; text-decoration: underline; }
+        nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
+        :focus-visible { outline: 3px solid #704b39; outline-offset: 5px; }
+        .skip-link { position: absolute; left: 12px; top: -80px; background: white; color: #614b3e; padding: 12px; z-index: 1; }
+        .skip-link:focus { top: 12px; }
+        .eyebrow { color: #815b46; font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+        .hero { padding: 65px 8%; display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 55px; max-width: 1440px; margin: auto; }
+        h1 { font-size: clamp(40px, 5vw, 64px); line-height: 1.08; color: #815b46; margin-bottom: 20px; }
+        .tagline { font-size: clamp(24px, 3vw, 34px); line-height: 1.25; color: #704b39; font-weight: bold; margin-bottom: 20px; }
+        .hero-copy { font-size: 17px; line-height: 1.8; color: #66564d; max-width: 560px; }
+        .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+        .button { display: inline-block; background: #815b46; color: white; padding: 14px 26px; border: 2px solid #815b46; border-radius: 25px; text-decoration: none; font-weight: bold; text-align: center; }
+        .button:hover { background: #61402f; border-color: #61402f; }
+        .button.secondary { color: #815b46; background: transparent; }
+        .button.secondary:hover { background: #f4dfcf; }
+        .hero-art { background: #f4dfcf; border-radius: 28px; padding: 25px; text-align: center; }
+        .hero-art svg { display: block; width: 100%; max-width: 330px; height: auto; margin: auto; }
+        .hero-art figcaption { font-weight: bold; color: #704b39; font-size: 18px; padding: 12px 0 5px; }
+        .services { padding: 30px 8% 65px; }
+        .section-heading { text-align: center; margin-bottom: 35px; }
+        h2 { font-size: 30px; color: #815b46; margin-bottom: 14px; }
+        .section-heading p { color: #66564d; line-height: 1.7; }
+        .service-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; max-width: 1200px; margin: auto; }
+        .service-card { background: white; border-radius: 15px; text-align: center; padding: 25px 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-7px); }
+        .service-icon { font-size: 48px; margin-bottom: 15px; }
+        .service-card h3 { color: #815b46; font-size: 20px; margin-bottom: 12px; }
+        .service-card p { color: #66564d; font-size: 14px; line-height: 1.7; }
+        .price { display: block; font-size: 22px; font-weight: bold; color: #815b46; margin-top: 18px; }
+        .menu-link { text-align: center; margin-top: 28px; }
+        .menu-link a, .mission a { color: #61402f; font-weight: bold; text-underline-offset: 4px; }
+        .mission { background: #f4dfcf; padding: 55px 8%; text-align: center; }
+        .mission-inner { max-width: 760px; margin: auto; }
+        .mission p { line-height: 1.8; color: #614b3e; }
+        .mission .eyebrow { margin-bottom: 12px; }
+        .mission .fun-fact { margin-top: 20px; font-size: 15px; }
+        .closing { padding: 60px 8%; text-align: center; }
+        .closing p { color: #66564d; line-height: 1.7; margin-bottom: 22px; }
+        footer { background: #815b46; color: white; text-align: center; padding: 25px; line-height: 1.8; }
+        @media (max-width: 900px) {
+            .hero { gap: 28px; }
+            .service-container { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            header { flex-direction: column; gap: 15px; }
+            nav { justify-content: center; gap: 12px 20px; font-size: 14px; }
+            .hero { grid-template-columns: 1fr; padding: 40px 6%; }
+            .hero-art { max-width: 400px; width: 100%; margin: auto; }
+            .services { padding: 25px 6% 45px; }
+            .service-container { grid-template-columns: 1fr; }
+            .mission, .closing { padding: 40px 6%; }
+            .buttons { flex-direction: column; align-items: stretch; }
+        }
+        @media (prefers-reduced-motion: reduce) { .service-card { transition: none; } }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- Shared brand and links to the two completed pages. -->
+    <header>
+        <a class="logo" href="index.html"><span aria-hidden="true">🐾</span> Paws &amp; Polish</a>
+        <nav aria-label="Main navigation">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="page2.html">Services</a>
+            <a href="page3.html">About &amp; Contact</a>
+        </nav>
+    </header>
+    <main id="main">
+        <!-- Hero and three-sentence elevator pitch. -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div>
+                <p class="eyebrow">A little pampering. A lot of tail wags.</p>
+                <h1 id="hero-title">Paws &amp; Polish</h1>
+                <p class="tagline">Fresh coats.<br>Happy paws. Big smiles.</p>
+                <p class="hero-copy">Paws &amp; Polish is a dog grooming salon for pet parents who want their best friends to look great and feel loved. From refreshing baths and stylish haircuts to gentle paw care, our packages make room for every pup’s personality. We bring patience, kindness, and a little extra pampering to every visit.</p>
+                <div class="buttons">
+                    <a class="button" href="page2.html">Explore Our Services</a>
+                    <a class="button secondary" href="page3.html#contact">Get in Touch</a>
+                </div>
+            </div>
+            <figure class="hero-art">
+                <!-- Inline logo artwork keeps this page usable without image files or internet. -->
+                <svg viewBox="0 0 360 320" role="img" aria-labelledby="dog-title dog-desc" xmlns="http://www.w3.org/2000/svg">
+                    <title id="dog-title">Paws &amp; Polish happy pup logo</title>
+                    <desc id="dog-desc">A smiling cream-colored dog with floppy brown ears and a peach bandana, surrounded by sparkles.</desc>
+                    <circle cx="180" cy="155" r="137" fill="#fffaf5"/>
+                    <path d="M62 68v26M49 81h26M297 120v24M285 132h24M284 41v18M275 50h18" stroke="#b8795c" stroke-width="5" stroke-linecap="round"/>
+                    <ellipse cx="180" cy="293" rx="98" ry="10" fill="#e8c3ad"/>
+                    <path d="M125 231Q180 209 235 231L249 289H111Z" fill="#e8c3ad" stroke="#815b46" stroke-width="5" stroke-linejoin="round"/>
+                    <path d="M116 98Q72 80 67 139Q58 194 90 211Q114 222 129 187M244 98Q288 80 293 139Q302 194 270 211Q246 222 231 187" fill="#815b46" stroke="#704b39" stroke-width="5"/>
+                    <path d="M180 67C119 67 106 112 110 164C109 215 136 244 180 244C224 244 251 215 250 164C254 112 241 67 180 67Z" fill="#f4dfcf" stroke="#815b46" stroke-width="5"/>
+                    <path d="M180 72Q155 94 165 120Q192 125 202 94" fill="#fffaf5"/>
+                    <ellipse cx="144" cy="153" rx="7" ry="10" fill="#61402f"/>
+                    <ellipse cx="216" cy="153" rx="7" ry="10" fill="#61402f"/>
+                    <ellipse cx="180" cy="194" rx="42" ry="30" fill="#fffaf5"/>
+                    <path d="M166 181Q180 174 194 181Q194 192 180 196Q166 192 166 181Z" fill="#61402f"/>
+                    <path d="M180 196v9m-18 0q18 20 36 0" fill="none" stroke="#61402f" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M166 216Q180 226 194 216Q194 239 180 239Q166 239 166 216Z" fill="#b8795c"/>
+                    <path d="M125 239L180 284L235 239Q180 261 125 239Z" fill="#b8795c" stroke="#815b46" stroke-width="4" stroke-linejoin="round"/>
+                    <circle cx="180" cy="264" r="5" fill="#fffaf5"/>
+                </svg>
+                <figcaption>Making every pup feel like a VIP!</figcaption>
+            </figure>
+        </section>
+        <!-- Preview uses the exact service names and prices from Page 2. -->
+        <section class="services" aria-labelledby="services-title">
+            <div class="section-heading">
+                <p class="eyebrow">Find your pup’s perfect pampering</p>
+                <h2 id="services-title">Good Looks Start Here</h2>
+                <p>A quick peek at our grooming menu, from everyday fresh to extra fancy.</p>
+            </div>
+            <div class="service-container">
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">🛁</div>
+                    <h3>The Fresh &amp; Clean</h3>
+                    <p>A gentle shampoo, refreshing bath, and blow dry for a sweet-smelling finish.</p>
+                    <span class="price">$30</span>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">✂️</div>
+                    <h3>The Full Makeover</h3>
+                    <p>A bath, haircut, nail trim, and ear cleaning for a fresh look from nose to tail.</p>
+                    <span class="price">$65</span>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">🐾</div>
+                    <h3>Paw-dicure Package</h3>
+                    <p>Nail trimming, paw cleaning, and paw balm to give those busy paws a little love.</p>
+                    <span class="price">$20</span>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">✨</div>
+                    <h3>The VIP Pup</h3>
+                    <p>A full groom with conditioning, a blueberry facial, and finishing spray.</p>
+                    <span class="price">$85</span>
+                </article>
+            </div>
+            <p class="menu-link"><a href="page2.html">View the full menu &amp; special offers &rarr;</a></p>
+        </section>
+        <!-- Mission statement and a group fact provide the requested trust/fun element. -->
+        <section class="mission" aria-labelledby="mission-title">
+            <div class="mission-inner">
+                <p class="eyebrow">Our promise to every pup</p>
+                <h2 id="mission-title">Kind Hearts. Gentle Hands. Happy Dogs.</h2>
+                <p>Our mission is simple: make grooming feel welcoming for dogs and reassuring for their people. We believe every pup deserves patience, kindness, and care, with plenty of personality left in the fluff.</p>
+                <p class="fun-fact"><strong>Meet the pack:</strong> Co-founders Taylor Lavis, Quinn Lockwood, and Veena Patel turned their shared love of animals into this student business idea. <a href="page3.html#team">Get to know our team</a>.</p>
+            </div>
+        </section>
+        <section class="closing" aria-labelledby="closing-title">
+            <h2 id="closing-title">Ready for a Little More Tail Wag?</h2>
+            <p>Find your favorite package or say hello to the people behind the polish.</p>
+            <a class="button" href="page3.html#contact">Get in Touch</a>
+        </section>
+        <!-- Fictional Customer Review -->
+<section class="closing" aria-labelledby="review-title">
+    <h2 id="review-title">Happy Pups. Happy People.</h2>
+
+    <div class="service-card" style="max-width: 650px; margin: auto;">
+        <p aria-label="5 out of 5 stars"
+           style="color: #815b46; font-size: 26px; margin-bottom: 15px;">
+            ★★★★★
+        </p>
+
+        <blockquote>
+            <p>
+                “My golden retriever, Biscuit, walked in looking like
+                he had rolled through the entire backyard and came
+                out looking like a superstar! The team was so kind,
+                and his new bandana was the perfect finishing touch.
+                We’re already wagging our way back!”
+            </p>
+        </blockquote>
+
+        <p style="margin-top: 18px; color: #815b46;">
+            <strong>— Jamie R., Biscuit’s human</strong>
+        </p>
+    </div>
+</section>
+    </main>
+    <footer>
+        <h3><span aria-hidden="true">🐾</span> Paws &amp; Polish</h3>
+        <p>Making every pup feel like a VIP!</p>
+        <p>&copy; 2026 Paws &amp; Polish | Fictional Student Business</p>
+    </footer>
+</body>
+</html>

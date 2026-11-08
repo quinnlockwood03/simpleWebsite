@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About &amp; Contact | Paws &amp; Polish</title>
+
+
+
+    <style>
+        /* Main Page Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffaf5;
+            color: #414141;
+        }
+
+
+
+        /* Navigation Bar */
+        header {
+            background-color: #f4dfcf;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #815b46;
+        }
+
+
+
+        nav a {
+            text-decoration: none;
+            color: #614b3e;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+
+
+        nav a:hover {
+            color: #b8795c;
+        }
+
+
+
+        /* Page Introduction */
+        .intro {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+
+
+        .intro h1 {
+            font-size: 40px;
+            color: #815b46;
+            margin-bottom: 15px;
+        }
+
+
+
+        .intro p {
+            font-size: 17px;
+            color: #777;
+            line-height: 1.6;
+        }
+
+
+
+        .promo-button {
+            display: inline-block;
+            background-color: #815b46;
+            color: white;
+            padding: 13px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .promo-button:hover { background-color: #61402f; }
+
+
+
+        /* Footer */
+        footer {
+            background-color: #815b46;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            line-height: 1.8;
+        }
+
+
+
+        @media (max-width: 600px) {
+            header { flex-direction: column; gap: 15px; }
+            .intro h1 { font-size: 30px; }
+        }
+
+
+
+        /* About, team, and contact sections */
+        html { scroll-behavior: smooth; }
+        .about-section { padding: 60px 8%; }
+        .about-section h2 { color: #815b46; font-size: 30px; margin-bottom: 20px; }
+        .about-section p { line-height: 1.8; }
+        .section-lead { max-width: 760px; margin-bottom: 28px; }
+        .eyebrow { color: #815b46; font-size: 13px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+        .story-box { max-width: 900px; margin: auto; background: #f4dfcf; border-radius: 20px; padding: 36px; }
+        .story-box p + p { margin-top: 16px; }
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+        .founder { background: white; border-radius: 15px; padding: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .avatar { display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 50%; background: #f4dfcf; color: #704b39; font-size: 22px; font-weight: bold; margin-bottom: 18px; }
+        .founder h3 { color: #815b46; margin-bottom: 6px; }
+        .founder .role { color: #704b39; font-weight: bold; font-size: 14px; margin-bottom: 12px; }
+        .note { font-size: 14px; color: #66564d; margin-top: 16px; }
+        .contact-section { background: #f4dfcf; }
+        .contact-grid, .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        address { font-style: normal; line-height: 1.9; }
+        address p { margin-bottom: 12px; }
+        .about-section a { color: #61402f; overflow-wrap: anywhere; }
+        .contact-form { background: #fffaf5; padding: 28px; border-radius: 15px; }
+        .contact-form h3 { color: #815b46; margin-bottom: 16px; }
+        label { display: block; margin: 14px 0 7px; font-weight: bold; }
+        input, textarea { display: block; width: 100%; padding: 12px; border: 1px solid #9d806f; border-radius: 8px; background: white; color: #414141; font: inherit; }
+        textarea { resize: vertical; }
+        button.promo-button { border: none; font: inherit; font-weight: bold; cursor: pointer; }
+        :focus-visible { outline: 3px solid #704b39; outline-offset: 4px; }
+        #form-status { margin-top: 16px; font-weight: bold; }
+        .hours { width: 100%; border-collapse: collapse; margin-top: 18px; }
+        .hours th, .hours td { text-align: left; padding: 14px 10px; border-bottom: 1px solid #e8c3ad; }
+        .hours caption { text-align: left; font-size: 14px; line-height: 1.6; color: #66564d; }
+        details { background: white; border: 1px solid #e8c3ad; border-radius: 10px; margin-bottom: 12px; padding: 18px; }
+        summary { font-weight: bold; color: #704b39; cursor: pointer; line-height: 1.5; }
+        details p { margin-top: 12px; }
+        nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px 20px; }
+        nav a { margin-left: 0; }
+        @media (max-width: 900px) { header { gap: 24px; } .team-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) {
+            .contact-grid, .info-grid { grid-template-columns: 1fr; gap: 28px; }
+            .about-section { padding: 40px 6%; }
+            .story-box, .contact-form { padding: 24px; }
+            nav { justify-content: center; }
+            nav a { margin: 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">🐾 Paws & Polish</div>
+
+
+
+        <nav aria-label="Main navigation">
+            <a href="#story">Our Story</a>
+            <a href="#team">Our Co-Founders</a>
+            <a href="#contact">Contact</a>
+            <a href="#faq">Hours &amp; FAQ</a>
+        </nav>
+    </header>
+
+
+
+    <main>
+    <section class="intro">
+        <h1>Get to Know Paws &amp; Polish</h1>
+        <p>A shared love of animals. An idea brought to life.</p>
+    </section>
+
+
+
+    <section class="about-section" id="story" aria-labelledby="story-title">
+        <div class="story-box">
+            <p class="eyebrow">Small beginnings. Big tail wags.</p>
+            <h2 id="story-title">Our Origin Story</h2>
+            <p>Our story began with something we all share: a personal connection to animals, especially dogs. As co-founders, Taylor Lavis, Quinn Lockwood, and Veena Patel wanted to turn that love into a business where people could feel confident that their pets were in safe, caring hands.</p>
+            <p>That shared purpose became Paws &amp; Polish. We imagined a welcoming place where every animal would be treated with patience, kindness, and care, and every owner could feel comfortable trusting us with their furry family member. It started with an idea and transformed into a story!</p>
+            <p class="note">A fictional student business created for a class project.</p>
+        </div>
+    </section>
+
+
+
+    <section class="about-section" id="team" aria-labelledby="team-title">
+        <p class="eyebrow">Meet the humans behind the happy paws</p>
+        <h2 id="team-title">Meet Our Co-Founders</h2>
+        <p class="section-lead">Taylor Lavis, Quinn Lockwood, and Veena Patel share a love of animals and a vision for care that earns every pet owner’s trust.</p>
+        <div class="team-grid">
+            <article class="founder">
+                <div class="avatar" aria-hidden="true">TL</div>
+                <h3>Taylor Lavis</h3>
+                <p class="role">Co-founder &amp; Chief Executive Officer</p>
+                <p>Taylor helps shape our shared vision: a welcoming business where owners can feel confident leaving their pets in caring hands.</p>
+            </article>
+            <article class="founder">
+                <div class="avatar" aria-hidden="true">QL</div>
+                <h3>Quinn Lockwood</h3>
+                <p class="role">Co-founder &amp; Lead Designer</p>
+                <p>Quinn helps bring our love of animals to life through a warm, welcoming design that reflects the care at the heart of Paws &amp; Polish.</p>
+            </article>
+            <article class="founder">
+                <div class="avatar" aria-hidden="true">VP</div>
+                <h3>Veena Patel</h3>
+                <p class="role">Co-founder &amp; Head of Marketing</p>
+                <p>Veena helps tell our story, sharing the personal connection to animals that inspired us and our goal of building trust with every pet owner.</p>
+            </article>
+        </div>
+        <p class="note">Job titles and role descriptions are fictional for this student business project.</p>
+    </section>
+
+
+
+    <section class="about-section contact-section" id="contact" aria-labelledby="contact-title">
+        <p class="eyebrow">Let's talk tails</p>
+        <h2 id="contact-title">Contact Paws &amp; Polish</h2>
+        <div class="contact-grid">
+            <div>
+                <p class="section-lead">Have a question about a package or a paw-some idea? Here is how you could reach our imaginary team.</p>
+                <address>
+                    <p><strong>Email</strong><br><a href="mailto:hello@pawsandpolish.example">hello@pawsandpolish.example</a></p>
+                    <p><strong>Phone</strong><br>(202) 555-0147</p>
+                    <p><strong>Our pretend storefront</strong><br>Student Enterprise Center, Room 104<br>123 Biscuit Lane, Pawsville Campus</p>
+                    <p><strong>Follow the fluff</strong><br>Instagram: @pawsandpolish.demo<br>TikTok: @pawsandpolish.demo</p>
+                </address>
+                <p class="note">All contact details and social handles are fictional.</p>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <h3>Send a Demo Message</h3>
+                <p class="note" id="demo-note">For this class project, the form only displays a confirmation. Nothing is sent or saved.</p>
+                <label for="name">Your name</label>
+                <input id="name" name="name" autocomplete="name" maxlength="100" required>
+                <label for="email">Your email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                <label for="message">Your message</label>
+                <textarea id="message" name="message" rows="4" maxlength="2000" required></textarea>
+                <button type="submit" class="promo-button" aria-describedby="demo-note">Try the Demo Form</button>
+                <p id="form-status" role="status" aria-live="polite"></p>
+                <noscript><p class="note">Enable JavaScript to try the demo confirmation.</p></noscript>
+            </form>
+        </div>
+    </section>
+
+
+
+    <section class="about-section" id="faq" aria-labelledby="faq-title">
+        <div class="info-grid">
+            <div>
+                <p class="eyebrow">Time for a little pampering</p>
+                <h2 id="hours-title">Hours of Operation</h2>
+                <table class="hours" aria-labelledby="hours-title">
+                    <caption>Pretend store hours for our fictional campus salon.</caption>
+                    <tbody>
+                        <tr><th scope="row">Monday–Friday</th><td>10:00 a.m.–6:00 p.m.</td></tr>
+                        <tr><th scope="row">Saturday</th><td>9:00 a.m.–3:00 p.m.</td></tr>
+                        <tr><th scope="row">Sunday</th><td>Closed for belly rubs</td></tr>
+                    </tbody>
+                </table>
+                <p class="note">Imaginary appointments recommended. During finals week, even our fictional team needs a study break!</p>
+            </div>
+            <div>
+                <p class="eyebrow">Good questions. Great paws.</p>
+                <h2 id="faq-title">Frequently Asked Questions</h2>
+                <details><summary>Do you only pamper dogs?</summary><p>In our fictional salon, dogs are our specialty! Cats are welcome to apply for the honorary position of Front Desk Supervisor.</p></details>
+                <details><summary>Can my pup choose a bandana?</summary><p>Absolutely. Our imaginary bandana bar has everything from classic polka dots to “I passed obedience school” energy.</p></details>
+                <details><summary>What if my dog is nervous?</summary><p>Our pretend spa menu includes the Slow &amp; Steady welcome: extra introduction time, a quiet corner, and plenty of encouragement.</p></details>
+                <details><summary>Can I actually book an appointment?</summary><p>This is a fictional student business. You can meet our co-founders and try the demo contact form, but we do not offer real appointments.</p></details>
+            </div>
+        </div>
+    </section>
+
+
+
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <h3>🐾 Paws & Polish</h3>
+        <p>Making every pup feel like a VIP!</p>
+        <p>© 2026 Paws &amp; Polish | Fictional Student Business</p>
+    </footer>
+
+
+
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        document.getElementById('form-status').textContent = 'Thanks for trying our form! This is a demo; your message was not sent or saved.';
+        this.reset();
+    });
+</script>
+</body>
+</html>

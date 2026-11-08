@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Services | Paws & Polish</title>
+
+
+
+    <style>
+        /* Main Page Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffaf5;
+            color: #414141;
+        }
+
+
+
+        /* Navigation Bar */
+        header {
+            background-color: #f4dfcf;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #815b46;
+        }
+
+
+
+        nav a {
+            text-decoration: none;
+            color: #614b3e;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+
+
+        nav a:hover {
+            color: #b8795c;
+        }
+
+
+
+        /* Page Introduction */
+        .intro {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+
+
+        .intro h1 {
+            font-size: 40px;
+            color: #815b46;
+            margin-bottom: 15px;
+        }
+
+
+
+        .intro p {
+            font-size: 17px;
+            color: #777;
+            line-height: 1.6;
+        }
+
+
+
+        /* Services Section */
+        .services {
+            padding: 30px 8% 70px;
+        }
+
+
+
+        .services h2 {
+            text-align: center;
+            font-size: 30px;
+            color: #815b46;
+            margin-bottom: 35px;
+        }
+
+
+
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+
+
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            text-align: center;
+            padding: 25px 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+
+
+        .service-card:hover {
+            transform: translateY(-7px);
+        }
+
+
+
+        .service-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+
+
+        .service-card h3 {
+            color: #815b46;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+
+
+        .service-card p {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.6;
+            min-height: 65px;
+        }
+
+
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #b8795c;
+            margin-top: 15px;
+        }
+
+
+
+        /* How It Works Section */
+        .process {
+            background-color: #f4dfcf;
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+
+
+        .process h2 {
+            font-size: 30px;
+            color: #815b46;
+            margin-bottom: 40px;
+        }
+
+
+
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+
+
+        .step {
+            flex: 1;
+        }
+
+
+
+        .step-number {
+            background-color: #b8795c;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+
+
+        .step h3 {
+            color: #815b46;
+            margin-bottom: 10px;
+        }
+
+
+
+        .step p {
+            color: #66564d;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+
+
+        /* Featured Promotion */
+        .promotion {
+            padding: 65px 8%;
+            text-align: center;
+        }
+
+
+
+        .promo-box {
+            background-color: #e8c3ad;
+            border-radius: 20px;
+            padding: 40px 20px;
+            max-width: 850px;
+            margin: auto;
+        }
+
+
+
+        .promo-box h2 {
+            font-size: 30px;
+            color: #704b39;
+            margin-bottom: 15px;
+        }
+
+
+
+        .promo-box p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #614b3e;
+        }
+
+
+
+        .discount {
+            font-size: 25px;
+            font-weight: bold;
+            color: #815b46;
+            margin: 20px 0;
+        }
+
+
+
+        .promo-button {
+            display: inline-block;
+            background-color: #815b46;
+            color: white;
+            padding: 13px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+
+
+        .promo-button:hover {
+            background-color: #61402f;
+        }
+
+
+
+        /* Footer */
+        footer {
+            background-color: #815b46;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            line-height: 1.8;
+        }
+
+
+
+        /* Mobile-Friendly Design */
+        @media (max-width: 900px) {
+            .service-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+
+
+            nav a {
+                margin: 8px;
+                font-size: 14px;
+            }
+
+
+
+            .intro h1 {
+                font-size: 30px;
+            }
+
+
+
+            .service-container {
+                grid-template-columns: 1fr;
+            }
+
+
+
+            .steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">🐾 Paws & Polish</div>
+
+
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="page2.html">Services</a>
+            <a href="#process">How It Works</a>
+            <a href="#promotions">Special Offers</a>
+        </nav>
+    </header>
+
+
+
+    <!-- Page Introduction -->
+    <section class="intro">
+        <h1>Our Products & Services</h1>
+        <p>
+            Because every pup deserves a little pampering!
+            <br>
+            Explore our grooming packages and find the perfect
+            treatment for your furry best friend.
+        </p>
+    </section>
+
+
+
+    <!-- Grooming Services -->
+    <section class="services">
+        <h2>Our Grooming Menu</h2>
+
+
+
+        <div class="service-container">
+
+
+
+            <div class="service-card">
+                <div class="service-icon">🛁</div>
+                <h3>The Fresh & Clean</h3>
+                <p>
+                    A refreshing bath, gentle shampoo,
+                    blow dry, and a sweet-smelling finish.
+                </p>
+                <div class="price">$30</div>
+            </div>
+
+
+
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>The Full Makeover</h3>
+                <p>
+                    The ultimate grooming experience!
+                    Includes a bath, haircut, nail trim,
+                    and ear cleaning.
+                </p>
+                <div class="price">$65</div>
+            </div>
+
+
+
+            <div class="service-card">
+                <div class="service-icon">🐾</div>
+                <h3>Paw-dicure Package</h3>
+                <p>
+                    Keep those paws looking perfect
+                    with nail trimming, paw cleaning,
+                    and paw balm.
+                </p>
+                <div class="price">$20</div>
+            </div>
+
+
+
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>The VIP Pup</h3>
+                <p>
+                    A luxury experience with a full groom,
+                    conditioning treatment, blueberry
+                    facial, and finishing spray.
+                </p>
+                <div class="price">$85</div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+    <!-- How It Works -->
+    <section class="process" id="process">
+
+
+
+        <h2>How It Works</h2>
+
+
+
+        <div class="steps">
+
+
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Book Your Appointment</h3>
+                <p>
+                    Choose your favorite grooming package
+                    and schedule a time that works for you.
+                </p>
+            </div>
+
+
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>We Pamper Your Pup</h3>
+                <p>
+                    Our grooming team gives your dog
+                    the care, attention, and love they deserve.
+                </p>
+            </div>
+
+
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Pick Up Your Pup!</h3>
+                <p>
+                    Your furry friend leaves looking fresh,
+                    feeling happy, and ready to show off!
+                </p>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+    <!-- Special Promotion -->
+    <section class="promotion" id="promotions">
+
+
+
+        <div class="promo-box">
+
+
+
+            <h2>🐶 Special Offer: The Puppy Package!</h2>
+
+
+
+            <p>
+                New to Paws & Polish? Treat your pup to
+                their first grooming experience with us!
+                Enjoy a little extra pampering at a special price.
+            </p>
+
+
+
+            <div class="discount">
+                15% OFF YOUR FIRST VISIT!
+            </div>
+
+
+
+            <p>
+                Use promo code: <strong>FIRSTPAW15</strong>
+                <br>
+                Available for first-time customers.
+            </p>
+
+
+
+            <a href="index.html" class="promo-button">
+                Book Your Pup Today!
+            </a>
+
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <h3>🐾 Paws & Polish</h3>
+        <p>Making every pup feel like a VIP!</p>
+        <p>© 2026 Paws & Polish | All Rights Reserved</p>
+    </footer>
+
+
+
+</body>
+</html>
